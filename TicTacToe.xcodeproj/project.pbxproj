@@ -8,20 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		0799BAB620F67029006B875E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BAB520F67029006B875E /* AppDelegate.swift */; };
-		0799BAB820F67029006B875E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BAB720F67029006B875E /* ViewController.swift */; };
-		0799BABB20F67029006B875E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0799BAB920F67029006B875E /* Main.storyboard */; };
 		0799BABD20F6702A006B875E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0799BABC20F6702A006B875E /* Assets.xcassets */; };
 		0799BAC020F6702A006B875E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0799BABE20F6702A006B875E /* LaunchScreen.storyboard */; };
+		079D3BD320F6732C0006B1BA /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D3BCF20F6732C0006B1BA /* RootRouter.swift */; };
+		079D3BD420F6732C0006B1BA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D3BD020F6732C0006B1BA /* RootViewController.swift */; };
+		079D3BD520F6732C0006B1BA /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D3BD120F6732C0006B1BA /* RootBuilder.swift */; };
+		079D3BD620F6732C0006B1BA /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D3BD220F6732C0006B1BA /* RootInteractor.swift */; };
+		079D3BDD20F673900006B1BA /* LoggedOutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D3BD920F673900006B1BA /* LoggedOutRouter.swift */; };
+		079D3BDE20F673900006B1BA /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D3BDA20F673900006B1BA /* LoggedOutViewController.swift */; };
+		079D3BDF20F673900006B1BA /* LoggedOutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D3BDB20F673900006B1BA /* LoggedOutBuilder.swift */; };
+		079D3BE020F673900006B1BA /* LoggedOutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D3BDC20F673900006B1BA /* LoggedOutInteractor.swift */; };
+		079D3BE220F673E30006B1BA /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D3BE120F673E30006B1BA /* AppComponent.swift */; };
+		079D3BE420F677AE0006B1BA /* RootComponent+LoggedOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D3BE320F677AE0006B1BA /* RootComponent+LoggedOut.swift */; };
+		3AFD8D3C23E7664B69C198A0 /* Pods_TicTacToe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CA3C61D0DC8CE67A0B46A9 /* Pods_TicTacToe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0799BAB220F67029006B875E /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0799BAB520F67029006B875E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0799BAB720F67029006B875E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0799BABA20F67029006B875E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0799BABC20F6702A006B875E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0799BABF20F6702A006B875E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0799BAC120F6702A006B875E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		079D3BCF20F6732C0006B1BA /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		079D3BD020F6732C0006B1BA /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		079D3BD120F6732C0006B1BA /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
+		079D3BD220F6732C0006B1BA /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
+		079D3BD920F673900006B1BA /* LoggedOutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutRouter.swift; sourceTree = "<group>"; };
+		079D3BDA20F673900006B1BA /* LoggedOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
+		079D3BDB20F673900006B1BA /* LoggedOutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutBuilder.swift; sourceTree = "<group>"; };
+		079D3BDC20F673900006B1BA /* LoggedOutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutInteractor.swift; sourceTree = "<group>"; };
+		079D3BE120F673E30006B1BA /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
+		079D3BE320F677AE0006B1BA /* RootComponent+LoggedOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootComponent+LoggedOut.swift"; sourceTree = "<group>"; };
+		5E894FF7F39F1EE405F2DE6C /* Pods-TicTacToe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToe.release.xcconfig"; path = "Pods/Target Support Files/Pods-TicTacToe/Pods-TicTacToe.release.xcconfig"; sourceTree = "<group>"; };
+		9E37EA03FA25239B9036542F /* Pods-TicTacToe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TicTacToe/Pods-TicTacToe.debug.xcconfig"; sourceTree = "<group>"; };
+		D7CA3C61D0DC8CE67A0B46A9 /* Pods_TicTacToe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TicTacToe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AFD8D3C23E7664B69C198A0 /* Pods_TicTacToe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +61,8 @@
 			children = (
 				0799BAB420F67029006B875E /* TicTacToe */,
 				0799BAB320F67029006B875E /* Products */,
+				4B1F9C8D70DA976C8C17D5F1 /* Pods */,
+				099D30C7BDFEDFDC74BA6FA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +77,63 @@
 		0799BAB420F67029006B875E /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
-				0799BAB520F67029006B875E /* AppDelegate.swift */,
-				0799BAB720F67029006B875E /* ViewController.swift */,
-				0799BAB920F67029006B875E /* Main.storyboard */,
+				079D3BD820F673620006B1BA /* AppStart */,
+				079D3BD720F673320006B1BA /* LoggedOut */,
+				079D3BCE20F673130006B1BA /* Root */,
 				0799BABC20F6702A006B875E /* Assets.xcassets */,
 				0799BABE20F6702A006B875E /* LaunchScreen.storyboard */,
 				0799BAC120F6702A006B875E /* Info.plist */,
 			);
 			path = TicTacToe;
+			sourceTree = "<group>";
+		};
+		079D3BCE20F673130006B1BA /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				079D3BCF20F6732C0006B1BA /* RootRouter.swift */,
+				079D3BD020F6732C0006B1BA /* RootViewController.swift */,
+				079D3BD120F6732C0006B1BA /* RootBuilder.swift */,
+				079D3BD220F6732C0006B1BA /* RootInteractor.swift */,
+				079D3BE320F677AE0006B1BA /* RootComponent+LoggedOut.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		079D3BD720F673320006B1BA /* LoggedOut */ = {
+			isa = PBXGroup;
+			children = (
+				079D3BD920F673900006B1BA /* LoggedOutRouter.swift */,
+				079D3BDA20F673900006B1BA /* LoggedOutViewController.swift */,
+				079D3BDB20F673900006B1BA /* LoggedOutBuilder.swift */,
+				079D3BDC20F673900006B1BA /* LoggedOutInteractor.swift */,
+			);
+			path = LoggedOut;
+			sourceTree = "<group>";
+		};
+		079D3BD820F673620006B1BA /* AppStart */ = {
+			isa = PBXGroup;
+			children = (
+				0799BAB520F67029006B875E /* AppDelegate.swift */,
+				079D3BE120F673E30006B1BA /* AppComponent.swift */,
+			);
+			path = AppStart;
+			sourceTree = "<group>";
+		};
+		099D30C7BDFEDFDC74BA6FA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7CA3C61D0DC8CE67A0B46A9 /* Pods_TicTacToe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B1F9C8D70DA976C8C17D5F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E37EA03FA25239B9036542F /* Pods-TicTacToe.debug.xcconfig */,
+				5E894FF7F39F1EE405F2DE6C /* Pods-TicTacToe.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0799BAC420F6702A006B875E /* Build configuration list for PBXNativeTarget "TicTacToe" */;
 			buildPhases = (
+				A4B5C817794B660EA30599AB /* [CP] Check Pods Manifest.lock */,
 				0799BAAE20F67029006B875E /* Sources */,
 				0799BAAF20F67029006B875E /* Frameworks */,
 				0799BAB020F67029006B875E /* Resources */,
+				777C163FDACC1F0B928B0652 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,33 +198,78 @@
 			files = (
 				0799BAC020F6702A006B875E /* LaunchScreen.storyboard in Resources */,
 				0799BABD20F6702A006B875E /* Assets.xcassets in Resources */,
-				0799BABB20F67029006B875E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		777C163FDACC1F0B928B0652 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TicTacToe/Pods-TicTacToe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RIBs/RIBs.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RIBs.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TicTacToe/Pods-TicTacToe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4B5C817794B660EA30599AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TicTacToe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0799BAAE20F67029006B875E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0799BAB820F67029006B875E /* ViewController.swift in Sources */,
+				079D3BD620F6732C0006B1BA /* RootInteractor.swift in Sources */,
+				079D3BDE20F673900006B1BA /* LoggedOutViewController.swift in Sources */,
+				079D3BD320F6732C0006B1BA /* RootRouter.swift in Sources */,
+				079D3BD520F6732C0006B1BA /* RootBuilder.swift in Sources */,
+				079D3BDD20F673900006B1BA /* LoggedOutRouter.swift in Sources */,
+				079D3BD420F6732C0006B1BA /* RootViewController.swift in Sources */,
+				079D3BE020F673900006B1BA /* LoggedOutInteractor.swift in Sources */,
 				0799BAB620F67029006B875E /* AppDelegate.swift in Sources */,
+				079D3BE220F673E30006B1BA /* AppComponent.swift in Sources */,
+				079D3BE420F677AE0006B1BA /* RootComponent+LoggedOut.swift in Sources */,
+				079D3BDF20F673900006B1BA /* LoggedOutBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0799BAB920F67029006B875E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0799BABA20F67029006B875E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0799BABE20F6702A006B875E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -278,6 +397,7 @@
 		};
 		0799BAC520F6702A006B875E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E37EA03FA25239B9036542F /* Pods-TicTacToe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -289,12 +409,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.varunsanthanam.TicTacToe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		0799BAC620F6702A006B875E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E894FF7F39F1EE405F2DE6C /* Pods-TicTacToe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -306,7 +427,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.varunsanthanam.TicTacToe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
