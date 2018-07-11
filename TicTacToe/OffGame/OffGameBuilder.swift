@@ -14,6 +14,7 @@ protocol OffGameDependency: Dependency {
     
     var player1Name: String { get }
     var player2Name: String { get }
+    var scoreStream: ScoreStream { get }
     
 }
 
@@ -26,6 +27,10 @@ final class OffGameComponent: Component<OffGameDependency> {
     
     fileprivate var player2Name: String {
         return self.dependency.player2Name
+    }
+    
+    fileprivate var scoreStream: ScoreStream {
+        return self.dependency.scoreStream
     }
     
 }
@@ -45,7 +50,7 @@ final class OffGameBuilder: Builder<OffGameDependency>, OffGameBuildable {
     func build(withListener listener: OffGameListener) -> OffGameRouting {
         let component = OffGameComponent(dependency: dependency)
         let viewController = OffGameViewController(withPlayer1Name: component.player1Name, player2Name: component.player2Name)
-        let interactor = OffGameInteractor(presenter: viewController)
+        let interactor = OffGameInteractor(presenter: viewController, scoreStream: component.scoreStream)
         interactor.listener = listener
         return OffGameRouter(interactor: interactor, viewController: viewController)
     }

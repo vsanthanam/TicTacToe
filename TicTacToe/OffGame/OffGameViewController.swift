@@ -11,27 +11,26 @@ import RxSwift
 import UIKit
 import SnapKit
 
+
 protocol OffGamePresentableListener: class {
-    
     func startGame()
-    
 }
 
 final class OffGameViewController: UIViewController, OffGamePresentable, OffGameViewControllable {
-
+    var uiviewController: UIViewController {
+        return self
+    }
+    
     weak var listener: OffGamePresentableListener?
     
     init(withPlayer1Name player1Name: String, player2Name: String) {
-        
         self.player1Name = player1Name
         self.player2Name = player2Name
-        
         super.init(nibName: nil, bundle: nil)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("Method is not supported")
     }
     
     override func viewDidLoad() {
@@ -42,10 +41,20 @@ final class OffGameViewController: UIViewController, OffGamePresentable, OffGame
         buildPlayerLabels()
     }
     
+    // MARK: - OffGamePresentable
+    
+    func set(score: Score) {
+        self.score = score
+    }
+    
     // MARK: - Private
     
     private let player1Name: String
     private let player2Name: String
+    
+    private var player1Label: UILabel?
+    private var player2Label: UILabel?
+    private var score: Score?
     
     private func buildStartButton() {
         let startButton = UIButton()
@@ -58,21 +67,21 @@ final class OffGameViewController: UIViewController, OffGamePresentable, OffGame
         startButton.setTitle("Start Game", for: .normal)
         startButton.setTitleColor(UIColor.white, for: .normal)
         startButton.backgroundColor = UIColor.black
-        startButton.addTarget(self, action: #selector(didTapStartGame), for: .touchUpInside)
+        startButton.addTarget(self, action: #selector(didTapStartButton), for: .touchUpInside)
     }
     
     private func buildPlayerLabels() {
-        let labelBuilder: (UIColor, String) -> UILabel = { (color: UIColor, text: String) in
+        let labelBuilder: (UIColor) -> UILabel = { (color: UIColor) in
             let label = UILabel()
             label.font = UIFont.boldSystemFont(ofSize: 35)
             label.backgroundColor = UIColor.clear
             label.textColor = color
             label.textAlignment = .center
-            label.text = text
             return label
         }
         
-        let player1Label = labelBuilder(UIColor.blue, player1Name)
+        let player1Label = labelBuilder(PlayerType.player1.color)
+        self.player1Label = player1Label
         view.addSubview(player1Label)
         player1Label.snp.makeConstraints { (maker: ConstraintMaker) in
             maker.top.equalTo(self.view).offset(70)
@@ -93,18 +102,42 @@ final class OffGameViewController: UIViewController, OffGamePresentable, OffGame
             maker.height.equalTo(20)
         }
         
-        let player2Label = labelBuilder(UIColor.red, player2Name)
+        let player2Label = labelBuilder(PlayerType.player2.color)
+        self.player2Label = player2Label
         view.addSubview(player2Label)
         player2Label.snp.makeConstraints { (maker: ConstraintMaker) in
             maker.top.equalTo(vsLabel.snp.bottom).offset(10)
             maker.height.leading.trailing.equalTo(player1Label)
         }
+        
+        updatePlayerLabels()
     }
     
-    @objc private func didTapStartGame() {
+    private func updatePlayerLabels() {
+        let player1Score = score?.player1Score ?? 0
+        player1Label?.text = "\(player1Name) (\(player1Score))"
+        
+        let player2Score = score?.player2Score ?? 0
+        player2Label?.text = "\(player2Name) (\(player2Score))"
+    }
+    
+    private let disposeBag = DisposeBag()
+    
+    @objc private func didTapStartButton() {
         
         self.listener?.startGame()
         
     }
+}
+
+extension PlayerType {
     
+    var color: UIColor {
+        switch self {
+        case .player1:
+            return UIColor.red
+        case .player2:
+            return UIColor.blue
+        }
+    }
 }

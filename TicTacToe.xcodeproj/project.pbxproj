@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0736452320F6BDB70029888B /* ScoreStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0736452220F6BDB70029888B /* ScoreStream.swift */; };
 		0751B43020F681630081BA2F /* LoggedInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751B42D20F681630081BA2F /* LoggedInRouter.swift */; };
 		0751B43120F681630081BA2F /* LoggedInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751B42E20F681630081BA2F /* LoggedInBuilder.swift */; };
 		0751B43220F681630081BA2F /* LoggedInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751B42F20F681630081BA2F /* LoggedInInteractor.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0736452220F6BDB70029888B /* ScoreStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreStream.swift; sourceTree = "<group>"; };
 		0751B42D20F681630081BA2F /* LoggedInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInRouter.swift; sourceTree = "<group>"; };
 		0751B42E20F681630081BA2F /* LoggedInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInBuilder.swift; sourceTree = "<group>"; };
 		0751B42F20F681630081BA2F /* LoggedInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInInteractor.swift; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0736452120F6BDAE0029888B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0736452220F6BDB70029888B /* ScoreStream.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0751B42C20F681540081BA2F /* LoggedIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +149,7 @@
 		0799BAB420F67029006B875E /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				0736452120F6BDAE0029888B /* Models */,
 				0751B44020F68B9C0081BA2F /* TicTacToe */,
 				0751B43520F685A60081BA2F /* OffGame */,
 				0751B42C20F681540081BA2F /* LoggedIn */,
@@ -325,6 +336,7 @@
 				079D3BDE20F673900006B1BA /* LoggedOutViewController.swift in Sources */,
 				079D3BD320F6732C0006B1BA /* RootRouter.swift in Sources */,
 				0751B44520F68BAD0081BA2F /* TicTacToeRouter.swift in Sources */,
+				0736452320F6BDB70029888B /* ScoreStream.swift in Sources */,
 				0751B43D20F685B50081BA2F /* OffGameInteractor.swift in Sources */,
 				0751B43A20F685B50081BA2F /* OffGameRouter.swift in Sources */,
 				0751B43420F682B00081BA2F /* RootComponent+LoggedIn.swift in Sources */,

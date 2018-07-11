@@ -17,12 +17,12 @@ protocol TicTacToePresentable: Presentable {
     var listener: TicTacToePresentableListener? { get set }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
     func setCell(atRow row: Int, col: Int, withPlayerType playerType: PlayerType)
-    func announce(winner: PlayerType)
+    func announce(winner: PlayerType?, withCompletionHandler handler: @escaping () -> ())
 }
 
 protocol TicTacToeListener: class {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
-    func gameDidEnd()
+    func gameDidEnd(withWinner: PlayerType?)
 }
 
 final class TicTacToeInteractor: PresentableInteractor<TicTacToePresentable>, TicTacToeInteractable, TicTacToePresentableListener {
@@ -61,17 +61,15 @@ final class TicTacToeInteractor: PresentableInteractor<TicTacToePresentable>, Ti
         presenter.setCell(atRow: row, col: col, withPlayerType: currentPlayer)
         
         if let winner = checkWinner() {
-            presenter.announce(winner: winner)
+            presenter.announce(winner: winner) {
+                self.listener?.gameDidEnd(withWinner: winner)
+            }
         }
-    }
-    
-    func closeGame() {
-        listener?.gameDidEnd()
     }
     
     // MARK: - Private
     
-    private var currentPlayer = PlayerType.red
+    private var currentPlayer = PlayerType.player1
     private var board = [[PlayerType?]]()
     
     private func initBoard() {
@@ -82,7 +80,7 @@ final class TicTacToeInteractor: PresentableInteractor<TicTacToePresentable>, Ti
     
     private func getAndFlipCurrentPlayer() -> PlayerType {
         let currentPlayer = self.currentPlayer
-        self.currentPlayer = currentPlayer == .red ? .blue : .red
+        self.currentPlayer = currentPlayer == .player1 ? .player2 : .player1
         return currentPlayer
     }
     
@@ -142,8 +140,8 @@ final class TicTacToeInteractor: PresentableInteractor<TicTacToePresentable>, Ti
 }
 
 enum PlayerType: Int {
-    case red = 1
-    case blue
+    case player1 = 1
+    case player2
 }
 
 struct GameConstants {
