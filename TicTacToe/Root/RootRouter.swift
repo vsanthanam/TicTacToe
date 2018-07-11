@@ -52,7 +52,7 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
     
     // MARK: - RootRouting
     
-    func routeToLoggedIn() {
+    func routeToLoggedIn(withPlayer1Name player1Name: String, player2Name: String) {
         
         if let loggedOut = self.loggedOut {
             self.detachChild(loggedOut)
@@ -60,7 +60,7 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
             self.loggedOut = nil
         }
         
-        self.attachLoggedIn()
+        self.attachLoggedIn(withPlayer1Name: player1Name, player2Name: player2Name)
         
     }
     
@@ -71,9 +71,9 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
     
     private var loggedOut: ViewableRouting?
     
-    private func attachLoggedIn() {
+    private func attachLoggedIn(withPlayer1Name player1Name: String, player2Name: String) {
         
-        let loggedIn = loggedInBuilder.build(withListener: interactor)
+        let loggedIn = loggedInBuilder.build(withListener: interactor, player1Name: player1Name, player2Name: player2Name)
         self.attachChild(loggedIn)
         
     }

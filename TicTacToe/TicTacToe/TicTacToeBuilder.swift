@@ -31,7 +31,7 @@ final class TicTacToeBuilder: Builder<TicTacToeDependency>, TicTacToeBuildable {
     }
 
     func build(withListener listener: TicTacToeListener) -> TicTacToeRouting {
-        let component = TicTacToeComponent(dependency: dependency)
+        let _ = TicTacToeComponent(dependency: dependency)
         let viewController = TicTacToeViewController()
         let interactor = TicTacToeInteractor(presenter: viewController)
         interactor.listener = listener
