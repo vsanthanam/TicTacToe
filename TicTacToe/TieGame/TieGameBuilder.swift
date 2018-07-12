@@ -31,7 +31,7 @@ final class TieGameBuilder: Builder<TieGameDependency>, TieGameBuildable {
     }
 
     func build(withListener listener: TieGameListener) -> TieGameRouting {
-        let component = TieGameComponent(dependency: dependency)
+        let _ = TieGameComponent(dependency: dependency)
         let viewController = TieGameViewController()
         let interactor = TieGameInteractor(presenter: viewController)
         interactor.listener = listener
