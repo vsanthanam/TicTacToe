@@ -24,6 +24,10 @@ final class LoggedInComponent: Component<LoggedInDependency> {
         return shared { ScoreStreamImpl() }
     }
     
+    var mutableTieStream: MutableTieStream {
+        return shared { TieStreamImpl() }
+    }
+    
     init(dependency: LoggedInDependency, player1Name: String, player2Name: String) {
         
         self.player1Name = player1Name
