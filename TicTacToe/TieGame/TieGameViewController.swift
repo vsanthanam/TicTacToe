@@ -13,6 +13,7 @@ import SnapKit
 
 protocol TieGamePresentableListener: class {
     func dismissTieGame()
+    func executeTieGame()
 }
 
 final class TieGameViewController: UIViewController, TieGamePresentable, TieGameViewControllable {
@@ -62,9 +63,16 @@ final class TieGameViewController: UIViewController, TieGamePresentable, TieGame
         
     }
     
-    @objc private func didTapCloseButton() {
+    
+    @objc private func didTapTestButton() {
         
         self.listener?.dismissTieGame()
+        
+    }
+    
+    @objc private func didTapCloseButton() {
+        
+        self.listener?.executeTieGame()
         
     }
     

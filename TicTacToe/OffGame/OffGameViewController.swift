@@ -39,12 +39,17 @@ final class OffGameViewController: UIViewController, OffGamePresentable, OffGame
         view.backgroundColor = UIColor.white
         buildStartButton()
         buildPlayerLabels()
+        buildTieLabel()
     }
     
     // MARK: - OffGamePresentable
     
     func set(score: Score) {
         self.score = score
+    }
+    
+    func set(tie: Tie) {
+        self.tie = tie
     }
     
     // MARK: - Private
@@ -54,7 +59,9 @@ final class OffGameViewController: UIViewController, OffGamePresentable, OffGame
     
     private var player1Label: UILabel?
     private var player2Label: UILabel?
+    private var tieLabel: UILabel?
     private var score: Score?
+    private var tie: Tie?
     
     private func buildStartButton() {
         let startButton = UIButton()
@@ -113,12 +120,41 @@ final class OffGameViewController: UIViewController, OffGamePresentable, OffGame
         updatePlayerLabels()
     }
     
+    private func buildTieLabel() {
+        
+        let tieLabel = UILabel()
+        tieLabel.font = UIFont.systemFont(ofSize: 14)
+        tieLabel.backgroundColor = UIColor.clear
+        tieLabel.textColor = UIColor.darkGray
+        tieLabel.textAlignment = .center
+        tieLabel.text = "Ties:"
+        
+        self.tieLabel = tieLabel
+        
+        self.view.addSubview(tieLabel)
+        tieLabel.snp.makeConstraints { (maker: ConstraintMaker) in
+            maker.bottom.equalTo(view.snp.bottom).offset(-8)
+            maker.left.equalTo(view.snp.left).offset(8)
+            maker.right.equalTo(view.snp.right).offset(-8)
+        }
+        
+        updateTieLabel()
+        
+    }
+    
     private func updatePlayerLabels() {
         let player1Score = score?.player1Score ?? 0
         player1Label?.text = "\(player1Name) (\(player1Score))"
         
         let player2Score = score?.player2Score ?? 0
         player2Label?.text = "\(player2Name) (\(player2Score))"
+    }
+    
+    private func updateTieLabel() {
+        
+        let ties = tie?.ties ?? 0
+        tieLabel?.text = "Ties: \(ties)"
+        
     }
     
     private let disposeBag = DisposeBag()

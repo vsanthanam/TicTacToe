@@ -52,6 +52,10 @@ final class TieGameInteractor: PresentableInteractor<TieGamePresentable>, TieGam
         self.listener?.didDismissTieGame()
     }
     
+    func executeTieGame() {
+        self.listener?.didDismissTieGame()
+    }
+    
     // MARK: - Private
     
     let tieStream: TieStream

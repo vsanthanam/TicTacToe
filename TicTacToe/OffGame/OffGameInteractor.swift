@@ -17,6 +17,7 @@ protocol OffGamePresentable: Presentable {
     var listener: OffGamePresentableListener? { get set }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
     func set(score: Score)
+    func set(tie: Tie)
 }
 
 protocol OffGameListener: class {

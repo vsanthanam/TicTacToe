@@ -15,6 +15,7 @@ protocol OffGameDependency: Dependency {
     var player1Name: String { get }
     var player2Name: String { get }
     var scoreStream: ScoreStream { get }
+    var tieStream : TieStream { get }
     
 }
 
@@ -31,6 +32,10 @@ final class OffGameComponent: Component<OffGameDependency> {
     
     fileprivate var scoreStream: ScoreStream {
         return self.dependency.scoreStream
+    }
+    
+    fileprivate var tieStream: TieStream {
+        return self.dependency.tieStream
     }
     
 }
