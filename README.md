@@ -2,9 +2,9 @@
 
 ## Learning Some New Stuff
 
-I started a new job recently that, in addition to using Swift 4.2 over my usual iOS language of Objective-C, also uses a ton of other libraries & tooling.
+I started a new job that, in addition to using Swift 4.2 over my usual iOS language of Objective-C, also uses a ton of other libraries & tooling.
 
-This project is an extension of the RIBs tutorial in an attempt to learn some new stuff
+This project is an extension of the RIBs tutorial, and is an attempt to learn some of these new iOS dev tools.
 
 ## Technologies
 
