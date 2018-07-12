@@ -24,6 +24,7 @@ protocol TicTacToePresentable: Presentable {
 protocol TicTacToeListener: class {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
     func gameDidEnd(withWinner: PlayerType?)
+    func gameDidTie()
 }
 
 // MARK: - Interactor
@@ -57,6 +58,8 @@ final class TicTacToeInteractor: PresentableInteractor<TicTacToePresentable>, Ti
             return
         }
         
+        moveCount = moveCount + 1
+        
         let currentPlayer = getAndFlipCurrentPlayer()
         self.board[row][col] = currentPlayer
         self.presenter.setCell(atRow: row, col: col, withPlayerType: currentPlayer)
@@ -65,6 +68,8 @@ final class TicTacToeInteractor: PresentableInteractor<TicTacToePresentable>, Ti
             self.presenter.announce(winner: winner) {
                 self.listener?.gameDidEnd(withWinner: winner)
             }
+        } else if moveCount == 9 {
+            self.listener?.gameDidTie()
         }
     }
     
@@ -72,6 +77,7 @@ final class TicTacToeInteractor: PresentableInteractor<TicTacToePresentable>, Ti
     
     private var currentPlayer = PlayerType.player1
     private var board = [[PlayerType?]]()
+    private var moveCount = 0
     
     private func initBoard() {
         for _ in 0..<GameConstants.rowCount {

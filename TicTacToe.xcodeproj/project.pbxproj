@@ -22,6 +22,11 @@
 		0751B44720F68BAD0081BA2F /* TicTacToeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751B44320F68BAD0081BA2F /* TicTacToeBuilder.swift */; };
 		0751B44820F68BAD0081BA2F /* TicTacToeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751B44420F68BAD0081BA2F /* TicTacToeInteractor.swift */; };
 		0751B44A20F68BC60081BA2F /* LoggedInComponent+TicTacToe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751B44920F68BC60081BA2F /* LoggedInComponent+TicTacToe.swift */; };
+		0766CDE020F6E0110008F5FB /* TieGameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0766CDDC20F6E0110008F5FB /* TieGameRouter.swift */; };
+		0766CDE120F6E0110008F5FB /* TieGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0766CDDD20F6E0110008F5FB /* TieGameViewController.swift */; };
+		0766CDE220F6E0110008F5FB /* TieGameBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0766CDDE20F6E0110008F5FB /* TieGameBuilder.swift */; };
+		0766CDE320F6E0110008F5FB /* TieGameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0766CDDF20F6E0110008F5FB /* TieGameInteractor.swift */; };
+		0766CDE520F6E02E0008F5FB /* LoggedInComponent+TieGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0766CDE420F6E02E0008F5FB /* LoggedInComponent+TieGame.swift */; };
 		0799BAB620F67029006B875E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799BAB520F67029006B875E /* AppDelegate.swift */; };
 		0799BABD20F6702A006B875E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0799BABC20F6702A006B875E /* Assets.xcassets */; };
 		0799BAC020F6702A006B875E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0799BABE20F6702A006B875E /* LaunchScreen.storyboard */; };
@@ -54,6 +59,11 @@
 		0751B44320F68BAD0081BA2F /* TicTacToeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeBuilder.swift; sourceTree = "<group>"; };
 		0751B44420F68BAD0081BA2F /* TicTacToeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeInteractor.swift; sourceTree = "<group>"; };
 		0751B44920F68BC60081BA2F /* LoggedInComponent+TicTacToe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoggedInComponent+TicTacToe.swift"; sourceTree = "<group>"; };
+		0766CDDC20F6E0110008F5FB /* TieGameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TieGameRouter.swift; sourceTree = "<group>"; };
+		0766CDDD20F6E0110008F5FB /* TieGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TieGameViewController.swift; sourceTree = "<group>"; };
+		0766CDDE20F6E0110008F5FB /* TieGameBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TieGameBuilder.swift; sourceTree = "<group>"; };
+		0766CDDF20F6E0110008F5FB /* TieGameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TieGameInteractor.swift; sourceTree = "<group>"; };
+		0766CDE420F6E02E0008F5FB /* LoggedInComponent+TieGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoggedInComponent+TieGame.swift"; sourceTree = "<group>"; };
 		0799BAB220F67029006B875E /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0799BAB520F67029006B875E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0799BABC20F6702A006B875E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +112,7 @@
 				0751B42F20F681630081BA2F /* LoggedInInteractor.swift */,
 				0751B43E20F6864E0081BA2F /* LoggedInComponent+OffGame.swift */,
 				0751B44920F68BC60081BA2F /* LoggedInComponent+TicTacToe.swift */,
+				0766CDE420F6E02E0008F5FB /* LoggedInComponent+TieGame.swift */,
 			);
 			path = LoggedIn;
 			sourceTree = "<group>";
@@ -128,6 +139,17 @@
 			path = TicTacToe;
 			sourceTree = "<group>";
 		};
+		0766CDDB20F6DFE90008F5FB /* TieGame */ = {
+			isa = PBXGroup;
+			children = (
+				0766CDDC20F6E0110008F5FB /* TieGameRouter.swift */,
+				0766CDDD20F6E0110008F5FB /* TieGameViewController.swift */,
+				0766CDDE20F6E0110008F5FB /* TieGameBuilder.swift */,
+				0766CDDF20F6E0110008F5FB /* TieGameInteractor.swift */,
+			);
+			path = TieGame;
+			sourceTree = "<group>";
+		};
 		0799BAA920F67029006B875E = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +171,7 @@
 		0799BAB420F67029006B875E /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				0766CDDB20F6DFE90008F5FB /* TieGame */,
 				0736452120F6BDAE0029888B /* Models */,
 				0751B44020F68B9C0081BA2F /* TicTacToe */,
 				0751B43520F685A60081BA2F /* OffGame */,
@@ -334,8 +357,11 @@
 				0751B43020F681630081BA2F /* LoggedInRouter.swift in Sources */,
 				0751B43F20F6864E0081BA2F /* LoggedInComponent+OffGame.swift in Sources */,
 				079D3BDE20F673900006B1BA /* LoggedOutViewController.swift in Sources */,
+				0766CDE520F6E02E0008F5FB /* LoggedInComponent+TieGame.swift in Sources */,
 				079D3BD320F6732C0006B1BA /* RootRouter.swift in Sources */,
+				0766CDE120F6E0110008F5FB /* TieGameViewController.swift in Sources */,
 				0751B44520F68BAD0081BA2F /* TicTacToeRouter.swift in Sources */,
+				0766CDE220F6E0110008F5FB /* TieGameBuilder.swift in Sources */,
 				0736452320F6BDB70029888B /* ScoreStream.swift in Sources */,
 				0751B43D20F685B50081BA2F /* OffGameInteractor.swift in Sources */,
 				0751B43A20F685B50081BA2F /* OffGameRouter.swift in Sources */,
@@ -346,6 +372,7 @@
 				0751B43C20F685B50081BA2F /* OffGameBuilder.swift in Sources */,
 				079D3BD420F6732C0006B1BA /* RootViewController.swift in Sources */,
 				0751B44A20F68BC60081BA2F /* LoggedInComponent+TicTacToe.swift in Sources */,
+				0766CDE020F6E0110008F5FB /* TieGameRouter.swift in Sources */,
 				079D3BE020F673900006B1BA /* LoggedOutInteractor.swift in Sources */,
 				0751B44820F68BAD0081BA2F /* TicTacToeInteractor.swift in Sources */,
 				0751B44720F68BAD0081BA2F /* TicTacToeBuilder.swift in Sources */,
@@ -354,6 +381,7 @@
 				079D3BE220F673E30006B1BA /* AppComponent.swift in Sources */,
 				079D3BE420F677AE0006B1BA /* RootComponent+LoggedOut.swift in Sources */,
 				0751B43B20F685B50081BA2F /* OffGameViewController.swift in Sources */,
+				0766CDE320F6E0110008F5FB /* TieGameInteractor.swift in Sources */,
 				079D3BDF20F673900006B1BA /* LoggedOutBuilder.swift in Sources */,
 				0751B44620F68BAD0081BA2F /* TicTacToeViewController.swift in Sources */,
 			);

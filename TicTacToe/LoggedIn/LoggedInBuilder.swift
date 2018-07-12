@@ -57,7 +57,8 @@ final class LoggedInBuilder: Builder<LoggedInDependency>, LoggedInBuildable {
         let interactor = LoggedInInteractor(mutableScoreStream: component.mutableScoreStream)
         let offGameBuilder = OffGameBuilder(dependency: component)
         let ticTacToeBuilder = TicTacToeBuilder(dependency: component)
+        let tieGameBuilder = TieGameBuilder(dependency: component)
         interactor.listener = listener
-        return LoggedInRouter(interactor: interactor, viewController: component.loggedInViewController, offGameBuilder: offGameBuilder, ticTacToeBuilder: ticTacToeBuilder)
+        return LoggedInRouter(interactor: interactor, viewController: component.loggedInViewController, offGameBuilder: offGameBuilder, ticTacToeBuilder: ticTacToeBuilder, tieGameBuilder: tieGameBuilder)
     }
 }

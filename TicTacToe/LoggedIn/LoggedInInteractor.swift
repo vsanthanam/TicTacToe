@@ -11,10 +11,9 @@ import RxSwift
 
 protocol LoggedInRouting: Routing {
     func cleanupViews()
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
-    
     func routeToOffGame()
     func routeToTicTacToe()
+    func routeToTieGame()
 
 }
 
@@ -51,11 +50,24 @@ final class LoggedInInteractor: Interactor, LoggedInInteractable {
         
     }
     
+    // MARK: - TicTacToeListener via LoggedInInteractable
     func gameDidEnd(withWinner winner: PlayerType?) {
         if let winner = winner {
             mutableScoreStream.updateScore(withWinner: winner)
         }
         router?.routeToOffGame()
+    }
+    
+    func gameDidTie() {
+        
+        self.router?.routeToTieGame()
+        
+    }
+    
+    // MARK: - TieGameListener via LoggedInInteractable
+    
+    func didDismissTieGame() {
+        self.router?.routeToOffGame()
     }
     
     // MARK: - Private
