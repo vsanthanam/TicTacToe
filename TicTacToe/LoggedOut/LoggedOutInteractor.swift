@@ -51,8 +51,8 @@ final class LoggedOutInteractor: PresentableInteractor<LoggedOutPresentable>, Lo
     
     func tappedLogin(withPlayer1Name player1Name: String?, player2Name: String?) {
         
-        let player1NameWithDefault = playerName(player1Name, withDefaultName: "Player 1")
-        let player2NameWithDefault = playerName(player2Name, withDefaultName: "Player 2")
+        let player1NameWithDefault = playerName(player1Name, withDefaultName: "Uber")
+        let player2NameWithDefault = playerName(player2Name, withDefaultName: "Lyft")
         
         self.listener?.didLogin(withPlayer1Name: player1NameWithDefault, player2Name: player2NameWithDefault)
         

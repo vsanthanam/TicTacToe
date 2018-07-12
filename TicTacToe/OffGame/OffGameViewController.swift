@@ -36,7 +36,7 @@ final class OffGameViewController: UIViewController, OffGamePresentable, OffGame
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.yellow
+        view.backgroundColor = UIColor.white
         buildStartButton()
         buildPlayerLabels()
     }
@@ -135,9 +135,9 @@ extension PlayerType {
     var color: UIColor {
         switch self {
         case .player1:
-            return UIColor.red
+            return UIColor.black
         case .player2:
-            return UIColor.blue
+            return#colorLiteral(red: 0.9960784314, green: 0.003921568627, blue: 0.7490196078, alpha: 1)
         }
     }
 }

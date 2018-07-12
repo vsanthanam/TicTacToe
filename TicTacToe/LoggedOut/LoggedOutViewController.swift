@@ -44,7 +44,7 @@ final class LoggedOutViewController: UIViewController, LoggedOutPresentable, Log
         self.player1Field = player1Field
         player1Field.borderStyle = UITextBorderStyle.line
         view.addSubview(player1Field)
-        player1Field.placeholder = "Player 1 name"
+        player1Field.placeholder = "Uber"
         player1Field.snp.makeConstraints { (maker: ConstraintMaker) in
             maker.top.equalTo(self.view).offset(100)
             maker.leading.trailing.equalTo(self.view).inset(40)
@@ -55,7 +55,7 @@ final class LoggedOutViewController: UIViewController, LoggedOutPresentable, Log
         self.player2Field = player2Field
         player2Field.borderStyle = UITextBorderStyle.line
         view.addSubview(player2Field)
-        player2Field.placeholder = "Player 2 name"
+        player2Field.placeholder = "Lyft"
         player2Field.snp.makeConstraints { (maker: ConstraintMaker) in
             maker.top.equalTo(player1Field.snp.bottom).offset(20)
             maker.left.right.height.equalTo(player1Field)

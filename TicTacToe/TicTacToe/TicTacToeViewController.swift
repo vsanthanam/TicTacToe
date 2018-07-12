@@ -35,7 +35,7 @@ final class TicTacToeViewController: UIViewController, TicTacToePresentable, Tic
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.yellow
+        self.view.backgroundColor = UIColor.white
         self.buildCollectionView()
     }
     
