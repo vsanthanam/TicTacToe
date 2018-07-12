@@ -18,8 +18,5 @@ protocol LoggedInDependencyTieGame: Dependency {
 extension LoggedInComponent: TieGameDependency {
 
     // TODO: Implement properties to provide for TieGame scope.
-    var tieStream: TieStream {
-        return mutableTieStream
-    }
 }
 

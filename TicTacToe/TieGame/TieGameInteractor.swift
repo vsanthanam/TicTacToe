@@ -31,8 +31,7 @@ final class TieGameInteractor: PresentableInteractor<TieGamePresentable>, TieGam
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    init(presenter: TieGamePresentable, tieStream: TieStream) {
-        self.tieStream = tieStream
+    override init(presenter: TieGamePresentable) {
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -56,9 +55,5 @@ final class TieGameInteractor: PresentableInteractor<TieGamePresentable>, TieGam
     func executeTieGame() {
         self.listener?.didExecuteTieGame()
     }
-    
-    // MARK: - Private
-    
-    let tieStream: TieStream
     
 }

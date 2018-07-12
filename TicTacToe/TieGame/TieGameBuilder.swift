@@ -11,15 +11,13 @@ import RIBs
 protocol TieGameDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be
     // created by this RIB.
-    var tieStream: TieStream { get }
+
 }
 
 final class TieGameComponent: Component<TieGameDependency> {
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
-    fileprivate var tieStream: TieStream {
-        return self.dependency.tieStream
-    }
+    
 }
 
 // MARK: - Builder
@@ -35,9 +33,9 @@ final class TieGameBuilder: Builder<TieGameDependency>, TieGameBuildable {
     }
 
     func build(withListener listener: TieGameListener) -> TieGameRouting {
-        let component = TieGameComponent(dependency: dependency)
+        let _ = TieGameComponent(dependency: dependency)
         let viewController = TieGameViewController()
-        let interactor = TieGameInteractor(presenter: viewController, tieStream: component.tieStream)
+        let interactor = TieGameInteractor(presenter: viewController)
         interactor.listener = listener
         return TieGameRouter(interactor: interactor, viewController: viewController)
     }

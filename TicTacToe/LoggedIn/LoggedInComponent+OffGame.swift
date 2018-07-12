@@ -21,4 +21,7 @@ extension LoggedInComponent: OffGameDependency {
     var scoreStream: ScoreStream {
         return mutableScoreStream
     }
+    var tieStream: TieStream {
+        return mutableTieStream
+    }
 }
