@@ -18,4 +18,4 @@ This project is an extension of the RIBs tutorial in an attempt to learn some ne
 1) Clone the repo `https://github.com/vsanthanam/TicTacToe.git`
 2) Install [CocoaPods](https://cocoapods.org) if you haven't already with `$ sudo gem install cocoapods`
 3) Install the dependencies with `$ pod install`
-4) Open the newly generated workspace, `TicTacToe.workspace`
+4) Open the newly generated workspace, `TicTacToe.xcworkspace`
