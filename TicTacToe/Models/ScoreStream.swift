@@ -34,18 +34,13 @@ protocol MutableScoreStream: ScoreStream {
 }
 
 class ScoreStreamImpl: MutableScoreStream {
-    
     var score: Observable<Score> {
-        return variable
-            .asObservable()
-            .distinctUntilChanged { (lhs: Score, rhs: Score) -> Bool in
-                Score.equals(lhs: lhs, rhs: rhs)
-        }
+        return self.variable .asObservable().distinctUntilChanged { (lhs: Score, rhs: Score) -> Bool in Score.equals(lhs: lhs, rhs: rhs) }
     }
     
     func updateScore(withWinner winner: PlayerType) {
         let newScore: Score = {
-            let currentScore = variable.value
+            let currentScore = self.variable.value
             switch winner {
                 case .player1:
                     return Score(player1Score: currentScore.player1Score + 1, player2Score: currentScore.player2Score)

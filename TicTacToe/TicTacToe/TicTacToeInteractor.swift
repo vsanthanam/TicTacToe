@@ -15,6 +15,7 @@ protocol TicTacToeRouting: ViewableRouting {
 
 protocol TicTacToePresentable: Presentable {
     var listener: TicTacToePresentableListener? { get set }
+    
     // TODO: Declare methods the interactor can invoke the presenter to present data.
     func setCell(atRow row: Int, col: Int, withPlayerType playerType: PlayerType)
     func announce(winner: PlayerType?, withCompletionHandler handler: @escaping () -> ())
@@ -25,11 +26,13 @@ protocol TicTacToeListener: class {
     func gameDidEnd(withWinner: PlayerType?)
 }
 
+// MARK: - Interactor
+
 final class TicTacToeInteractor: PresentableInteractor<TicTacToePresentable>, TicTacToeInteractable, TicTacToePresentableListener {
-    
     weak var router: TicTacToeRouting?
-    
     weak var listener: TicTacToeListener?
+    
+    // MARK: - Override
     
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
@@ -40,13 +43,11 @@ final class TicTacToeInteractor: PresentableInteractor<TicTacToePresentable>, Ti
     
     override func didBecomeActive() {
         super.didBecomeActive()
-        
-        initBoard()
+        self.initBoard()
     }
     
     override func willResignActive() {
         super.willResignActive()
-        // TODO: Pause any business logic.
     }
     
     // MARK: - TicTacToePresentableListener
@@ -57,11 +58,11 @@ final class TicTacToeInteractor: PresentableInteractor<TicTacToePresentable>, Ti
         }
         
         let currentPlayer = getAndFlipCurrentPlayer()
-        board[row][col] = currentPlayer
-        presenter.setCell(atRow: row, col: col, withPlayerType: currentPlayer)
+        self.board[row][col] = currentPlayer
+        self.presenter.setCell(atRow: row, col: col, withPlayerType: currentPlayer)
         
         if let winner = checkWinner() {
-            presenter.announce(winner: winner) {
+            self.presenter.announce(winner: winner) {
                 self.listener?.gameDidEnd(withWinner: winner)
             }
         }
@@ -74,7 +75,7 @@ final class TicTacToeInteractor: PresentableInteractor<TicTacToePresentable>, Ti
     
     private func initBoard() {
         for _ in 0..<GameConstants.rowCount {
-            board.append([nil, nil, nil])
+            self.board.append([nil, nil, nil])
         }
     }
     
@@ -97,8 +98,8 @@ final class TicTacToeInteractor: PresentableInteractor<TicTacToePresentable>, Ti
                     break
                 }
             }
-            if let winner = winner {
-                return winner
+            if let w = winner {
+                return w
             }
         }
         
