@@ -27,6 +27,7 @@ final class TieGameViewController: UIViewController, TieGamePresentable, TieGame
         self.view.backgroundColor = UIColor.white
         self.buildAustinLabel()
         self.buildCloseButton()
+        self.buildTestButton()
     }
     
     private func buildAustinLabel() {
@@ -56,10 +57,27 @@ final class TieGameViewController: UIViewController, TieGamePresentable, TieGame
             maker.bottom.equalTo(view.snp.bottom).offset(-20)
             maker.height.equalTo(44)
         }
-        closeButton.setTitle("Close", for: .normal)
+        closeButton.setTitle("Tie Game", for: .normal)
         closeButton.setTitleColor(UIColor.white, for: .normal)
         closeButton.backgroundColor = UIColor.black
         closeButton.addTarget(self, action: #selector(didTapCloseButton), for: .touchUpInside)
+        
+    }
+    
+    private func buildTestButton() {
+        
+        let testButton = UIButton()
+        view.addSubview(testButton)
+        testButton.snp.makeConstraints { (maker: ConstraintMaker) in
+            maker.left.equalTo(view.snp.left).offset(20)
+            maker.right.equalTo(view.snp.right).offset(-20)
+            maker.bottom.equalTo(view.snp.bottom).offset(-84)
+            maker.height.equalTo(44)
+        }
+        testButton.setTitle("Just Checking", for: .normal)
+        testButton.setTitleColor(UIColor.white, for: .normal)
+        testButton.backgroundColor = UIColor.black
+        testButton.addTarget(self, action: #selector(didTapTestButton), for: .touchUpInside)
         
     }
     

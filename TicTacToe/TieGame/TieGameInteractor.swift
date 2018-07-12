@@ -21,6 +21,7 @@ protocol TieGamePresentable: Presentable {
 protocol TieGameListener: class {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
     func didDismissTieGame()
+    func didExecuteTieGame()
 }
 
 final class TieGameInteractor: PresentableInteractor<TieGamePresentable>, TieGameInteractable, TieGamePresentableListener {
@@ -53,7 +54,7 @@ final class TieGameInteractor: PresentableInteractor<TieGamePresentable>, TieGam
     }
     
     func executeTieGame() {
-        self.listener?.didDismissTieGame()
+        self.listener?.didExecuteTieGame()
     }
     
     // MARK: - Private

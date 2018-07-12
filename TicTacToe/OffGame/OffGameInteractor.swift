@@ -34,7 +34,8 @@ final class OffGameInteractor: PresentableInteractor<OffGamePresentable>, OffGam
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    init(presenter: OffGamePresentable, scoreStream: ScoreStream) {
+    init(presenter: OffGamePresentable, scoreStream: ScoreStream, tieStream: TieStream) {
+        self.tieStream = tieStream
         self.scoreStream = scoreStream
         super.init(presenter: presenter)
         presenter.listener = self
@@ -44,6 +45,7 @@ final class OffGameInteractor: PresentableInteractor<OffGamePresentable>, OffGam
         super.didBecomeActive()
         // TODO: Implement business logic here.
         self.updateScore()
+        self.updateTie()
     }
 
     override func willResignActive() {
@@ -62,6 +64,7 @@ final class OffGameInteractor: PresentableInteractor<OffGamePresentable>, OffGam
     // MARK: - Private
     
     private let scoreStream: ScoreStream
+    private let tieStream: TieStream
     
     private func updateScore() {
         
@@ -72,6 +75,18 @@ final class OffGameInteractor: PresentableInteractor<OffGamePresentable>, OffGam
                 }
             )
             .disposeOnDeactivate(interactor: self)
+    }
+    
+    private func updateTie() {
+        
+        tieStream.tie
+            .subscribe(
+                onNext: { (tie: Tie) in
+                    self.presenter.set(tie: tie)
+            }
+        )
+        .disposeOnDeactivate(interactor: self)
+        
     }
     
 }

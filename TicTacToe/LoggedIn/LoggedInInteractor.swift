@@ -26,8 +26,9 @@ final class LoggedInInteractor: Interactor, LoggedInInteractable {
     weak var router: LoggedInRouting?
     weak var listener: LoggedInListener?
 
-    init(mutableScoreStream: MutableScoreStream) {
+    init(mutableScoreStream: MutableScoreStream, mutableTieStream: MutableTieStream) {
         self.mutableScoreStream = mutableScoreStream
+        self.mutableTieStream = mutableTieStream
         super.init()
     }
 
@@ -70,7 +71,13 @@ final class LoggedInInteractor: Interactor, LoggedInInteractable {
         self.router?.routeToOffGame()
     }
     
+    func didExecuteTieGame() {
+        mutableTieStream.incrementTies()
+        self.router?.routeToOffGame()
+    }
+    
     // MARK: - Private
     
     private let mutableScoreStream: MutableScoreStream
+    private let mutableTieStream: MutableTieStream
 }
