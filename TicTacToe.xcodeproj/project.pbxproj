@@ -40,6 +40,7 @@
 		079D3BE020F673900006B1BA /* LoggedOutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D3BDC20F673900006B1BA /* LoggedOutInteractor.swift */; };
 		079D3BE220F673E30006B1BA /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D3BE120F673E30006B1BA /* AppComponent.swift */; };
 		079D3BE420F677AE0006B1BA /* RootComponent+LoggedOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D3BE320F677AE0006B1BA /* RootComponent+LoggedOut.swift */; };
+		07A3C01A20F7CB9E009F9DA5 /* TieStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A3C01920F7CB9E009F9DA5 /* TieStream.swift */; };
 		3AFD8D3C23E7664B69C198A0 /* Pods_TicTacToe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CA3C61D0DC8CE67A0B46A9 /* Pods_TicTacToe.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		079D3BDC20F673900006B1BA /* LoggedOutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutInteractor.swift; sourceTree = "<group>"; };
 		079D3BE120F673E30006B1BA /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		079D3BE320F677AE0006B1BA /* RootComponent+LoggedOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootComponent+LoggedOut.swift"; sourceTree = "<group>"; };
+		07A3C01920F7CB9E009F9DA5 /* TieStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TieStream.swift; sourceTree = "<group>"; };
 		5E894FF7F39F1EE405F2DE6C /* Pods-TicTacToe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToe.release.xcconfig"; path = "Pods/Target Support Files/Pods-TicTacToe/Pods-TicTacToe.release.xcconfig"; sourceTree = "<group>"; };
 		9E37EA03FA25239B9036542F /* Pods-TicTacToe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TicTacToe/Pods-TicTacToe.debug.xcconfig"; sourceTree = "<group>"; };
 		D7CA3C61D0DC8CE67A0B46A9 /* Pods_TicTacToe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TicTacToe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				0736452220F6BDB70029888B /* ScoreStream.swift */,
+				07A3C01920F7CB9E009F9DA5 /* TieStream.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				0751B44820F68BAD0081BA2F /* TicTacToeInteractor.swift in Sources */,
 				0751B44720F68BAD0081BA2F /* TicTacToeBuilder.swift in Sources */,
 				0751B43120F681630081BA2F /* LoggedInBuilder.swift in Sources */,
+				07A3C01A20F7CB9E009F9DA5 /* TieStream.swift in Sources */,
 				0799BAB620F67029006B875E /* AppDelegate.swift in Sources */,
 				079D3BE220F673E30006B1BA /* AppComponent.swift in Sources */,
 				079D3BE420F677AE0006B1BA /* RootComponent+LoggedOut.swift in Sources */,
